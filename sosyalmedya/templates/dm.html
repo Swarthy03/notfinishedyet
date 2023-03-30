@@ -1,0 +1,30 @@
+{% extends "mainpage.html" %}
+
+{% block sa %}
+<br><br><br><h2 style="margin-left: 50px;">SOHBET</h2>
+<div class="input-group" style="margin-left: 50px;">
+    <form method="post">
+        <input name="arama" type="search" class="form-control rounded" style="margin-right: 100px;" placeholder="Yeni Kişi  " aria-label="Search" aria-describedby="search-addon" />
+        <button type="submit" class="btn btn-outline-primary" style="margin-right: 1000px;">search</button>
+        <br>
+        <br>
+        {% if uzunluk == 0 %}
+        <h5>Aradığınız kriterlere uygun kullanıcı bulunamadı.</h5>
+        {% else %}
+        {% for i in users%}
+        {% if i.username == username %}
+        {{pass}}
+        {% else %}
+        <h5><a href="message/{{i.username}}">{{i.username}}</a></h5>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </form>
+  </div>
+<div style="margin-left: 50px;">
+  <h3>Son Mesajlaşmalar</h3>
+  {% for i in lastmessages %} 
+  <a href="message/{{i}}"><h5>{{i}}</h5></a>
+  {% endfor %}
+</div>
+{% endblock sa%}

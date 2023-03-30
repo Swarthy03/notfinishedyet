@@ -1,0 +1,17 @@
+{% extends "mainpage.html" %}
+{% block head %}
+<script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+{% endblock %}
+
+{% block sa %}
+<br><br><br><br>   
+{% from "includes/_formhelpers.html" import render_field %}
+<form style="margin-left: 50px; margin-right: 50px;" method = "post">
+    <textarea name="apost"></textarea>
+    <script>
+            CKEDITOR.replace( 'apost' );
+    </script>
+    <br>
+    <button class="btn btn-primary">Gönder</button>
+</form>
+{% endblock %}

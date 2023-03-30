@@ -1,0 +1,9 @@
+{% extends "mainpage.html" %}
+{% block sa %}
+<br><br><br><br>
+<div style="text-align: center; margin-left: 150px; margin-right: 150px;">
+
+<h4 style="color: blue;">{{a.username}}</h4>
+<h5>{{a.post|safe}}</h5>
+</div>
+{% endblock %}

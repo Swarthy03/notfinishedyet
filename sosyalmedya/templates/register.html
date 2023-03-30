@@ -1,0 +1,23 @@
+{% extends "mainpage.html" %}
+
+{% from "includes/_formhelpers.html" import render_field %}
+
+
+
+{% block sa %}
+<form method=post>
+    <br><br><br>
+    <h3>Kayıt Ol</h3>
+    <hr>
+    <div style="margin-left: 50px;">
+    <p>{{ render_field(form.name) }}</p>
+    <p>{{ render_field(form.username) }}</p>
+    <p>{{ render_field(form.email) }}</p>
+    <p>{{ render_field(form.password) }}</p>
+    <p>{{ render_field(form.confirmpassword) }}</p>
+    <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+</div>
+{% endblock sa %}
+
+
+</form>
